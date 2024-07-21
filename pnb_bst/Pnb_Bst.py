@@ -15,7 +15,7 @@ class Pnb_Bst:
     def search(self, key):
         with self.lock:
             if self.root:
-                copied_root = self.root.custom_deepcopy()
+                copied_root = self.root
                 return self._search(copied_root, key)
             else:
                 return None
@@ -96,7 +96,7 @@ class Pnb_Bst:
     def find_key_range(self, low, high):
         with self.lock:
             if self.root:
-                copied_root = self.root.custom_deepcopy()
+                copied_root = self.root
                 return self._find_key_range(copied_root, low, high, [])
             else:
                 return []
